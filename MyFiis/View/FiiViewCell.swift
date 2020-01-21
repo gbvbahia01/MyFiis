@@ -16,7 +16,8 @@ class FiiViewCell: UITableViewCell {
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var yeldLabel: UILabel!
     @IBOutlet weak var rentLabel: UILabel!
-
+    @IBOutlet weak var dtPgtoLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -34,5 +35,6 @@ class FiiViewCell: UITableViewCell {
         valueLabel.text = data.value
         rentLabel.text = data.rentability
         dateLabel.text = data.baseData
+        dtPgtoLabel.text = data.pgtoData
     }
 }
