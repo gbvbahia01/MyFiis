@@ -43,6 +43,7 @@ class FiisListViewController: UITableViewController {
     
     fileprivate func deleteFii(_ forCode: String) {
         store.deleteFiis(forCode)
+        fiisDictionary[forCode] = nil
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
