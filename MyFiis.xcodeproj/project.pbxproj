@@ -3,27 +3,53 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0FA9518523D7A7EC00B81BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9518423D7A7EC00B81BA7 /* AppDelegate.swift */; };
 		0FA9518723D7A7EC00B81BA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9518623D7A7EC00B81BA7 /* SceneDelegate.swift */; };
-		0FA9518923D7A7EC00B81BA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9518823D7A7EC00B81BA7 /* ViewController.swift */; };
 		0FA9518C23D7A7EC00B81BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FA9518A23D7A7EC00B81BA7 /* Main.storyboard */; };
 		0FA9518E23D7A7EE00B81BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FA9518D23D7A7EE00B81BA7 /* Assets.xcassets */; };
 		0FA9519123D7A7EE00B81BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FA9518F23D7A7EE00B81BA7 /* LaunchScreen.storyboard */; };
+		0FA9519923D7A93B00B81BA7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9519823D7A93B00B81BA7 /* Constants.swift */; };
+		0FA9519C23D7A9B400B81BA7 /* FiiHistoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9519B23D7A9B400B81BA7 /* FiiHistoryListViewController.swift */; };
+		0FA9519E23D7A9E600B81BA7 /* FiisListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9519D23D7A9E600B81BA7 /* FiisListViewController.swift */; };
+		0FA951A023D7AA0400B81BA7 /* FiiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9519F23D7AA0400B81BA7 /* FiiData.swift */; };
+		0FA951A323D7AA1C00B81BA7 /* Fiis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA951A223D7AA1C00B81BA7 /* Fiis.swift */; };
+		0FA951A523D7AA2C00B81BA7 /* FiisDataCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA951A423D7AA2C00B81BA7 /* FiisDataCollector.swift */; };
+		0FA951A723D7AA4300B81BA7 /* FiisRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA951A623D7AA4300B81BA7 /* FiisRealm.swift */; };
+		0FA951AB23D7AACB00B81BA7 /* FiiHistoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA951A923D7AACB00B81BA7 /* FiiHistoryViewCell.swift */; };
+		0FA951AC23D7AACB00B81BA7 /* FiiHistoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA951AA23D7AACB00B81BA7 /* FiiHistoryViewCell.xib */; };
+		0FA951AF23D7AAEC00B81BA7 /* FiiViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA951AD23D7AAEC00B81BA7 /* FiiViewCell.swift */; };
+		0FA951B023D7AAEC00B81BA7 /* FiiViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA951AE23D7AAEC00B81BA7 /* FiiViewCell.xib */; };
+		0FA951B223D7ADE100B81BA7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0FA951B123D7ADE100B81BA7 /* README.md */; };
+		E08698C25CFE79D1C9360C3C /* Pods_MyFiis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B11DC8B761681CA8074A766 /* Pods_MyFiis.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0FA9518123D7A7EC00B81BA7 /* MyFiis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFiis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FA9518423D7A7EC00B81BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FA9518623D7A7EC00B81BA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0FA9518823D7A7EC00B81BA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0FA9518B23D7A7EC00B81BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0FA9518D23D7A7EE00B81BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FA9519023D7A7EE00B81BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FA9519223D7A7EE00B81BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FA9519823D7A93B00B81BA7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0FA9519B23D7A9B400B81BA7 /* FiiHistoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiHistoryListViewController.swift; sourceTree = "<group>"; };
+		0FA9519D23D7A9E600B81BA7 /* FiisListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiisListViewController.swift; sourceTree = "<group>"; };
+		0FA9519F23D7AA0400B81BA7 /* FiiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiData.swift; sourceTree = "<group>"; };
+		0FA951A223D7AA1C00B81BA7 /* Fiis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fiis.swift; sourceTree = "<group>"; };
+		0FA951A423D7AA2C00B81BA7 /* FiisDataCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiisDataCollector.swift; sourceTree = "<group>"; };
+		0FA951A623D7AA4300B81BA7 /* FiisRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiisRealm.swift; sourceTree = "<group>"; };
+		0FA951A923D7AACB00B81BA7 /* FiiHistoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiHistoryViewCell.swift; sourceTree = "<group>"; };
+		0FA951AA23D7AACB00B81BA7 /* FiiHistoryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiiHistoryViewCell.xib; sourceTree = "<group>"; };
+		0FA951AD23D7AAEC00B81BA7 /* FiiViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiViewCell.swift; sourceTree = "<group>"; };
+		0FA951AE23D7AAEC00B81BA7 /* FiiViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiiViewCell.xib; sourceTree = "<group>"; };
+		0FA951B123D7ADE100B81BA7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6B11DC8B761681CA8074A766 /* Pods_MyFiis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFiis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86C1A2BBE54C7DCF014B428C /* Pods-MyFiis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFiis.release.xcconfig"; path = "Target Support Files/Pods-MyFiis/Pods-MyFiis.release.xcconfig"; sourceTree = "<group>"; };
+		BF7A3F0908E0C16AA2DD06DB /* Pods-MyFiis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFiis.debug.xcconfig"; path = "Target Support Files/Pods-MyFiis/Pods-MyFiis.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E08698C25CFE79D1C9360C3C /* Pods_MyFiis.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +69,8 @@
 			children = (
 				0FA9518323D7A7EC00B81BA7 /* MyFiis */,
 				0FA9518223D7A7EC00B81BA7 /* Products */,
+				99B2B17954E7059484017116 /* Pods */,
+				38E7E9C49C0E3DBC5957506F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +85,67 @@
 		0FA9518323D7A7EC00B81BA7 /* MyFiis */ = {
 			isa = PBXGroup;
 			children = (
+				0FA951B123D7ADE100B81BA7 /* README.md */,
 				0FA9518423D7A7EC00B81BA7 /* AppDelegate.swift */,
 				0FA9518623D7A7EC00B81BA7 /* SceneDelegate.swift */,
-				0FA9518823D7A7EC00B81BA7 /* ViewController.swift */,
-				0FA9518A23D7A7EC00B81BA7 /* Main.storyboard */,
+				0FA9519823D7A93B00B81BA7 /* Constants.swift */,
+				0FA951A123D7AA0A00B81BA7 /* Model */,
+				0FA9519A23D7A99D00B81BA7 /* Controller */,
+				0FA951A823D7AAA600B81BA7 /* View */,
 				0FA9518D23D7A7EE00B81BA7 /* Assets.xcassets */,
-				0FA9518F23D7A7EE00B81BA7 /* LaunchScreen.storyboard */,
 				0FA9519223D7A7EE00B81BA7 /* Info.plist */,
 			);
 			path = MyFiis;
+			sourceTree = "<group>";
+		};
+		0FA9519A23D7A99D00B81BA7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0FA9519B23D7A9B400B81BA7 /* FiiHistoryListViewController.swift */,
+				0FA9519D23D7A9E600B81BA7 /* FiisListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0FA951A123D7AA0A00B81BA7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0FA9519F23D7AA0400B81BA7 /* FiiData.swift */,
+				0FA951A223D7AA1C00B81BA7 /* Fiis.swift */,
+				0FA951A423D7AA2C00B81BA7 /* FiisDataCollector.swift */,
+				0FA951A623D7AA4300B81BA7 /* FiisRealm.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0FA951A823D7AAA600B81BA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0FA9518A23D7A7EC00B81BA7 /* Main.storyboard */,
+				0FA9518F23D7A7EE00B81BA7 /* LaunchScreen.storyboard */,
+				0FA951A923D7AACB00B81BA7 /* FiiHistoryViewCell.swift */,
+				0FA951AA23D7AACB00B81BA7 /* FiiHistoryViewCell.xib */,
+				0FA951AD23D7AAEC00B81BA7 /* FiiViewCell.swift */,
+				0FA951AE23D7AAEC00B81BA7 /* FiiViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		38E7E9C49C0E3DBC5957506F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B11DC8B761681CA8074A766 /* Pods_MyFiis.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		99B2B17954E7059484017116 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF7A3F0908E0C16AA2DD06DB /* Pods-MyFiis.debug.xcconfig */,
+				86C1A2BBE54C7DCF014B428C /* Pods-MyFiis.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0FA9519523D7A7EE00B81BA7 /* Build configuration list for PBXNativeTarget "MyFiis" */;
 			buildPhases = (
+				79428EA8F601FB51856889A7 /* [CP] Check Pods Manifest.lock */,
 				0FA9517D23D7A7EC00B81BA7 /* Sources */,
 				0FA9517E23D7A7EC00B81BA7 /* Frameworks */,
 				0FA9517F23D7A7EC00B81BA7 /* Resources */,
+				62C29019B485E73DB1D6BC1F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,22 +208,75 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA951B223D7ADE100B81BA7 /* README.md in Resources */,
+				0FA951AC23D7AACB00B81BA7 /* FiiHistoryViewCell.xib in Resources */,
 				0FA9519123D7A7EE00B81BA7 /* LaunchScreen.storyboard in Resources */,
 				0FA9518E23D7A7EE00B81BA7 /* Assets.xcassets in Resources */,
 				0FA9518C23D7A7EC00B81BA7 /* Main.storyboard in Resources */,
+				0FA951B023D7AAEC00B81BA7 /* FiiViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		62C29019B485E73DB1D6BC1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyFiis/Pods-MyFiis-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyFiis/Pods-MyFiis-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyFiis/Pods-MyFiis-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79428EA8F601FB51856889A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyFiis-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0FA9517D23D7A7EC00B81BA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FA9518923D7A7EC00B81BA7 /* ViewController.swift in Sources */,
+				0FA951AB23D7AACB00B81BA7 /* FiiHistoryViewCell.swift in Sources */,
+				0FA951A323D7AA1C00B81BA7 /* Fiis.swift in Sources */,
+				0FA9519C23D7A9B400B81BA7 /* FiiHistoryListViewController.swift in Sources */,
 				0FA9518523D7A7EC00B81BA7 /* AppDelegate.swift in Sources */,
+				0FA951A023D7AA0400B81BA7 /* FiiData.swift in Sources */,
 				0FA9518723D7A7EC00B81BA7 /* SceneDelegate.swift in Sources */,
+				0FA9519923D7A93B00B81BA7 /* Constants.swift in Sources */,
+				0FA9519E23D7A9E600B81BA7 /* FiisListViewController.swift in Sources */,
+				0FA951A723D7AA4300B81BA7 /* FiisRealm.swift in Sources */,
+				0FA951A523D7AA2C00B81BA7 /* FiisDataCollector.swift in Sources */,
+				0FA951AF23D7AAEC00B81BA7 /* FiiViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +418,7 @@
 		};
 		0FA9519623D7A7EE00B81BA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF7A3F0908E0C16AA2DD06DB /* Pods-MyFiis.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +437,7 @@
 		};
 		0FA9519723D7A7EE00B81BA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86C1A2BBE54C7DCF014B428C /* Pods-MyFiis.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
