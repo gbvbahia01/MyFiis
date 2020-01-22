@@ -23,3 +23,4 @@ struct FiiData {
     let dy: String
     let rentability: String
 }
+

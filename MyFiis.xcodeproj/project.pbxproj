@@ -24,6 +24,7 @@
 		0FA951AF23D7AAEC00B81BA7 /* FiiViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA951AD23D7AAEC00B81BA7 /* FiiViewCell.swift */; };
 		0FA951B023D7AAEC00B81BA7 /* FiiViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA951AE23D7AAEC00B81BA7 /* FiiViewCell.xib */; };
 		0FA951B423D7BF6B00B81BA7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0FA951B323D7BF6B00B81BA7 /* README.md */; };
+		0FFEA0FC23D8F40800EF5E62 /* FiisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFEA0FB23D8F40800EF5E62 /* FiisData.swift */; };
 		E08698C25CFE79D1C9360C3C /* Pods_MyFiis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B11DC8B761681CA8074A766 /* Pods_MyFiis.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		0FA951AD23D7AAEC00B81BA7 /* FiiViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiiViewCell.swift; sourceTree = "<group>"; };
 		0FA951AE23D7AAEC00B81BA7 /* FiiViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiiViewCell.xib; sourceTree = "<group>"; };
 		0FA951B323D7BF6B00B81BA7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0FFEA0FB23D8F40800EF5E62 /* FiisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiisData.swift; sourceTree = "<group>"; };
 		6B11DC8B761681CA8074A766 /* Pods_MyFiis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFiis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C1A2BBE54C7DCF014B428C /* Pods-MyFiis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFiis.release.xcconfig"; path = "Target Support Files/Pods-MyFiis/Pods-MyFiis.release.xcconfig"; sourceTree = "<group>"; };
 		BF7A3F0908E0C16AA2DD06DB /* Pods-MyFiis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFiis.debug.xcconfig"; path = "Target Support Files/Pods-MyFiis/Pods-MyFiis.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				0FA9519F23D7AA0400B81BA7 /* FiiData.swift */,
+				0FFEA0FB23D8F40800EF5E62 /* FiisData.swift */,
 				0FA951A223D7AA1C00B81BA7 /* Fiis.swift */,
 				0FA951A423D7AA2C00B81BA7 /* FiisDataCollector.swift */,
 				0FA951A623D7AA4300B81BA7 /* FiisRealm.swift */,
@@ -272,6 +275,7 @@
 				0FA9518523D7A7EC00B81BA7 /* AppDelegate.swift in Sources */,
 				0FA951A023D7AA0400B81BA7 /* FiiData.swift in Sources */,
 				0FA9518723D7A7EC00B81BA7 /* SceneDelegate.swift in Sources */,
+				0FFEA0FC23D8F40800EF5E62 /* FiisData.swift in Sources */,
 				0FA9519923D7A93B00B81BA7 /* Constants.swift in Sources */,
 				0FA9519E23D7A9E600B81BA7 /* FiisListViewController.swift in Sources */,
 				0FA951A723D7AA4300B81BA7 /* FiisRealm.swift in Sources */,

@@ -12,7 +12,7 @@ import RealmSwift
 class FiisListViewController: UITableViewController {
 
     let fiis = store.fiisResult
-    var fiisDictionary = [String: [FiiData]]();
+    var fiisArray = [FiisData]();
     var fiiCollector = FiisDataCollector()
     
     override func viewDidLoad() {
@@ -43,44 +43,42 @@ class FiisListViewController: UITableViewController {
     
     fileprivate func deleteFii(_ forCode: String) {
         store.deleteFiis(forCode)
-        fiisDictionary[forCode] = nil
+        let _ = fiisArray.removeBy(codeFII: forCode)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! FiiHistoryListViewController
         
         if let indexPath = tableView.indexPathForSelectedRow {
-            destinationVC.fiiHistoryData = fiisDictionary[Array(fiisDictionary.keys)[indexPath.row]] ?? [FiiData]()
-            
-            destinationVC.navigationItem.title = Array(fiisDictionary.keys)[indexPath.row]
+            destinationVC.fiiHistoryData =  fiisArray[indexPath.row].fiisHistory
+            destinationVC.navigationItem.title = fiisArray[indexPath.row].code
         }
     }
     
     //MARK: - Table Datasource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Array(fiisDictionary.keys).count;
+        return fiisArray.count;
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.CELL_FIIS_DATA, for: indexPath) as! FiiViewCell
-        let code = Array(fiisDictionary.keys)[indexPath.row];
-        cell.codeLabel.text = code
-        if (!(fiisDictionary[code]?.isEmpty ?? true)) {
-            let data = fiisDictionary[code]!
-            
+        let fii = fiisArray[indexPath.row];
+        cell.codeLabel.text = fii.code
+        if (!(fii.fiisHistory.isEmpty)) {
+           
             var amount = 0;
-            if let fii = fiis.filter("codigo = '\(code)' ").first {
+            if let fii = fiis.filter("codigo = '\(fii.code)' ").first {
                 amount = fii.amount
             }
-            cell.fillTableCell(data[0], amount)
+            cell.fillTableCell(fii.fiisHistory[0], amount)
             cell.accessoryType = .disclosureIndicator
         } else {
-            cell.fillTableCell(FiiData(code: code,
-                                       baseData: "",
-                                       pgtoData: "",
-                                       value: "",
-                                       dy: "",
-                                       rentability: ""), 0)
+            cell.fillTableCell(FiiData(code: fii.code,
+                                       baseData: "---",
+                                       pgtoData: "---",
+                                       value: "---",
+                                       dy: "---",
+                                       rentability: "---"), 0)
             cell.accessoryType = .none
             //self.fiiCollector.fetchFiis(fiiCode: code);
         }
@@ -93,8 +91,8 @@ class FiisListViewController: UITableViewController {
     //MARK: - TableView Delegate Mathods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if (fiisDictionary[Array(fiisDictionary.keys)[indexPath.row]]?.isEmpty ?? true) {
-            fiiCollector.fetchFiis(fiiCode: Array(fiisDictionary.keys)[indexPath.row])
+        if (fiisArray[indexPath.row].fiisHistory.isEmpty) {
+            fiiCollector.fetchFiis(fiiCode: fiisArray[indexPath.row].code)
             tableView.deselectRow(at: indexPath, animated: true);
         } else {
             performSegue(withIdentifier: K.SEGUE_TO_HISTORY_FII_LIST, sender: self)
@@ -105,7 +103,7 @@ class FiisListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
-                deleteFii(Array(fiisDictionary.keys)[indexPath.row])
+                deleteFii(fiisArray[indexPath.row].code)
                 tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         }
     }
@@ -122,13 +120,15 @@ class FiisListViewController: UITableViewController {
         
         let action = UIAlertAction(title: "Add Fii", style: .default) { (action) in
             if let fii = codigoField.text?.uppercased(), let amount = Int(amountField.text ?? "0") {
-                if self.fiisDictionary.keys.firstIndex(of: fii) == nil {
+                if self.fiisArray.searchBy(codeFII: fii) == nil {
                     let newFiis = Fiis()
                     newFiis.codigo = fii
                     newFiis.amount = amount
                     store.saveFiis(fiis: newFiis)
                     self.fiiCollector.fetchFiis(fiiCode: fii);
                     self.tableView.reloadData()
+                } else {
+                    self.alertFiiIsAlreadyInList(codeFii: fii)
                 }
             }
             
@@ -151,6 +151,16 @@ class FiisListViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
         
     }
+
+    fileprivate func alertFiiIsAlreadyInList(codeFii: String) {
+        let alert = UIAlertController(title: "Fii \(codeFii) is alredy in table",
+        message: "",
+        preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+
 }
 
 //MARK: - FiiManagerDelegate
@@ -159,7 +169,8 @@ extension FiisListViewController: FiiManagerDelegate {
     func didUpdateFii(_ withCollector: FiisDataCollector,
                       forCode: String,
                       withFii: [FiiData]) {
-        self.fiisDictionary[forCode] = withFii;
+        self.fiisArray.append(FiisData(code: forCode, fiisHistory: withFii))
+        self.fiisArray.sort()
         self.tableView.reloadData()
         //print(withFii)
     }
