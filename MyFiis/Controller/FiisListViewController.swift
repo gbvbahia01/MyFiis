@@ -67,7 +67,12 @@ class FiisListViewController: UITableViewController {
         cell.codeLabel.text = code
         if (!(fiisDictionary[code]?.isEmpty ?? true)) {
             let data = fiisDictionary[code]!
-            cell.fillTableCell(data[0])
+            
+            var amount = 0;
+            if let fii = fiis.filter("codigo = '\(code)' ").first {
+                amount = fii.amount
+            }
+            cell.fillTableCell(data[0], amount)
             cell.accessoryType = .disclosureIndicator
         } else {
             cell.fillTableCell(FiiData(code: code,
@@ -75,7 +80,7 @@ class FiisListViewController: UITableViewController {
                                        pgtoData: "",
                                        value: "",
                                        dy: "",
-                                       rentability: ""))
+                                       rentability: ""), 0)
             cell.accessoryType = .none
             //self.fiiCollector.fetchFiis(fiiCode: code);
         }
