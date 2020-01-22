@@ -37,7 +37,9 @@ class FiisListViewController: UITableViewController {
         var codigos = [String]()
         for fii in fiis {
             codigos.append(fii.codigo)
+            fiisArray.append(FiisData(code: fii.codigo))
         }
+        self.tableView.reloadData()
         self.fiiCollector.scheduledFiis(with: codigos);
     }
     
@@ -72,6 +74,7 @@ class FiisListViewController: UITableViewController {
             }
             cell.fillTableCell(fii.fiisHistory[0], amount)
             cell.accessoryType = .disclosureIndicator
+            cell.state(loading: false)
         } else {
             cell.fillTableCell(FiiData(code: fii.code,
                                        baseData: "---",
@@ -80,6 +83,7 @@ class FiisListViewController: UITableViewController {
                                        dy: "---",
                                        rentability: "---"), 0)
             cell.accessoryType = .none
+            cell.state(loading: true)
             //self.fiiCollector.fetchFiis(fiiCode: code);
         }
         
@@ -94,6 +98,7 @@ class FiisListViewController: UITableViewController {
         if (fiisArray[indexPath.row].fiisHistory.isEmpty) {
             fiiCollector.fetchFiis(fiiCode: fiisArray[indexPath.row].code)
             tableView.deselectRow(at: indexPath, animated: true);
+            print("Going to get \(fiisArray[indexPath.row].code)")
         } else {
             performSegue(withIdentifier: K.SEGUE_TO_HISTORY_FII_LIST, sender: self)
         }
@@ -128,7 +133,10 @@ class FiisListViewController: UITableViewController {
                     self.fiiCollector.fetchFiis(fiiCode: fii);
                     self.tableView.reloadData()
                 } else {
-                    self.alertFiiIsAlreadyInList(codeFii: fii)
+                    if let fii = self.fiis.filter("codigo = '\(fii)' ").first {
+                        store.updateFiis(codigo: fii.codigo, amount: fii.amount + amount)
+                        self.tableView.reloadData()
+                    }
                 }
             }
             
@@ -152,15 +160,6 @@ class FiisListViewController: UITableViewController {
         
     }
 
-    fileprivate func alertFiiIsAlreadyInList(codeFii: String) {
-        let alert = UIAlertController(title: "Fii \(codeFii) is alredy in table",
-        message: "",
-        preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-
 }
 
 //MARK: - FiiManagerDelegate
@@ -169,6 +168,7 @@ extension FiisListViewController: FiiManagerDelegate {
     func didUpdateFii(_ withCollector: FiisDataCollector,
                       forCode: String,
                       withFii: [FiiData]) {
+        let _ = self.fiisArray.removeBy(codeFII: forCode)
         self.fiisArray.append(FiisData(code: forCode, fiisHistory: withFii))
         self.fiisArray.sort()
         self.tableView.reloadData()

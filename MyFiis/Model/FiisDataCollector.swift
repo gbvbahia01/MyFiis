@@ -19,7 +19,7 @@ struct FiisDataCollector {
     var delegate: FiiManagerDelegate?;
     
     func scheduledFiis(with fiis: [String]) {
-        print(#function)
+        //print(#function)
         let queue = DispatchQueue.global(qos: .background)
         // Do somthing after i seconds
         var i = -1.0

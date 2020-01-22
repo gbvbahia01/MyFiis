@@ -19,6 +19,7 @@ class FiiViewCell: UITableViewCell {
     @IBOutlet weak var toReceiveLabel: UILabel!
     @IBOutlet weak var dtpgtoLabel: UILabel!
     @IBOutlet weak var totalValueLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let formatter = NumberFormatter()
     override func awakeFromNib() {
@@ -34,6 +35,24 @@ class FiiViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func state(loading: Bool) {
+        if (loading) {
+            activityIndicator.startAnimating()
+            activityIndicator.style = .medium
+            activityIndicator.isHidden = false
+        } else {
+            activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
+        }
+        dateLabel.isHidden = loading
+        valueLabel.isHidden = loading
+        yeldLabel.isHidden = loading
+        rentLabel.isHidden = loading
+        toReceiveLabel.isHidden = loading
+        dtpgtoLabel.isHidden = loading
+        totalValueLabel.isHidden = loading
+    }
+    
     func fillTableCell(_ data: FiiData, _ amount: Int) {
         codeLabel.text = data.code
         yeldLabel.text = data.dy
@@ -46,6 +65,8 @@ class FiiViewCell: UITableViewCell {
         if let vu = Double(valueUnit) {
             let mktValue = vu * Double(amount)
             totalValueLabel.text = formatter.string(from: NSNumber(value: mktValue))
+        } else {
+            totalValueLabel.text = "---"
         }
         var toReceive = data.rentability.replacingOccurrences(of: "[R$. ]", with: "", options: [.regularExpression, .caseInsensitive])
         toReceive = toReceive.replacingOccurrences(of: "[,]", with: ".", options: [.regularExpression, .caseInsensitive])
